@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
-
+        protected $fillable = [
+        'name',
+        'city',
+        'stadium',
+        'capacity',
+        'year_of_fundation'
+    ];
     public function presidents()
     {
         return $this->belongsTo(\App\Models\President::class);

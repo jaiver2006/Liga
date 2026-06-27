@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
-    public function pruebas()
+    public function create()
     {
-        $player = Player::find(4);
 
-        return [
-            'player' => $player,
-            'team' => $player->team,
-        ];
+        return view('Player.create');
+    }
+
+    public function store(Request $request)
+    {
+        Player::create($request->all());
     }
 }

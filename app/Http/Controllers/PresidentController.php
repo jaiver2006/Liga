@@ -7,13 +7,14 @@ use App\Models\President;
 
 class PresidentController extends Controller
 {
-        public function pruebas()
+    public function create()
     {
-        $president = President::find(1);
 
-        return [
-            'president' => $president,
-            'team' => $president->team,
-        ];
+        return view('President.create');
+    }
+
+    public function store(Request $request)
+    {
+        President::create($request->all());
     }
 }

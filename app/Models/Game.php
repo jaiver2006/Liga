@@ -9,6 +9,12 @@ class Game extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'date',
+        'local_goals',
+        'away_goals',
+    ];
+
     public function goals()
     {
         return $this->hasMany(\App\Models\Goal::class);

@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Goal extends Model
 {
+        protected $fillable = [
+        'goal',
+        'descripcion'
+    ];
     use HasFactory;
 
         public function player()

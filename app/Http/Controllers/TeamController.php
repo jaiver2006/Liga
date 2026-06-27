@@ -7,14 +7,14 @@ use App\Models\Team;
 
 class TeamController extends Controller
 {
-    public function pruebas()
+    public function create()
     {
-        $team = Team::find(1);
 
-        return [
-            'team' => $team,
-            'players' => $team->players,
-            
-        ];
+        return view('Team.create');
+    }
+
+    public function store(Request $request)
+    {
+        Team::create($request->all());
     }
 }

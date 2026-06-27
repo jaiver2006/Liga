@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class President extends Model
 {
     use HasFactory;
-
+    protected $fillable = [
+        'name',
+        'city'
+    ];
     public function team()
     {
         return $this->hasOne(\App\Models\Team::class);
-        
-
     }
 }

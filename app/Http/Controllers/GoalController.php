@@ -7,13 +7,14 @@ use App\Models\Goal;
 
 class GoalController extends Controller
 {
-    public function pruebas()
+    public function create()
     {
-        $goal = Goal::find(1);
-        return [
-            'goal' => $goal,
-            'player' => $goal->player,
-            'game' => $goal->game,
-        ];
+
+        return view('Goal.create');
+    }
+
+    public function store(Request $request)
+    {
+        Goal::create($request->all());
     }
 }
